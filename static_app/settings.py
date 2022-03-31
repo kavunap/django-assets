@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'static_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'satatic_app',
-        'USER': 'kavuna',
-        'PASSWORD': '1212',
-        'HOST': 'localhost',
+        'NAME': 'delp3vgtt0bt2c',
+        'USER': 'acjldawunritnt',
+        'PASSWORD': '56c509d94a92006c65db356c1f099c9ec00487844fc19f4ed7da4eed73fb2408',
+        'HOST': 'ec2-34-231-63-30.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
