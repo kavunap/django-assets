@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Blog
 from .forms import BlogForm
+from django.contrib import messages
 
 
 def index(request):
@@ -20,6 +21,7 @@ def create(request):
         content = request.POST['content']
         blog = Blog(title=title, content=content)
         blog.save()
+        messages.add_message(request, messages.SUCCESS, "Blog created succesfully")    # 追加
         return redirect(to='/blog')
     return render(request, 'blog/create.html', params)
 
