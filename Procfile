@@ -1,1 +1,1 @@
-web: gunicorn static_app/static_app/wsgi:app
+web: gunicorn static_app/wsgi:app
