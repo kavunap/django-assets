@@ -43,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'static_app.urls'
@@ -68,6 +69,20 @@ WSGI_APPLICATION = 'static_app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# Local database connection
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'static_app',
+#         'USER': 'kavuna',
+#         'PASSWORD': '1212',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# Heroku database connection
 
 DATABASES = {
     'default': {
@@ -79,7 +94,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -144,3 +158,5 @@ if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']    # 追記
     import django_heroku
     django_heroku.settings(locals())
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
